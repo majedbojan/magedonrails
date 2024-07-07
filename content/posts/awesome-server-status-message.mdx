@@ -3,12 +3,118 @@ title: Awesome server status message
 date: "2019-09-11T22:12:03.284Z"
 description: "Awesome server status message"
 category: Ruby
-image: /default.png
+image: /posts/awesome-server-status-message/cover.webp
 ---
 
-## Hey, there’s news you’ll want to hear!
 
-- **Bad news**: We’re currently in the process of migrating the story from [Medium](https://medium.com/@bojanmajed/awesome-server-status-message-53db02a0b168) to our website.
-- **Good news**: You don’t have to wait! Dive right into the story on Medium [here](https://medium.com/@bojanmajed/awesome-server-status-message-53db02a0b168) while we work on bringing it to our site.
+Many developers tend to overlook the importance of server status and error messages, such as "404 Page Not Found," until they become critical. Recently, while working on a project where I managed the server-side operations, I encountered a significant issue with our Rails API backend.
 
-Stay tuned for the update!
+In our staging environment, we experienced frequent server downtimes due to the high volume of data being fetched from a third-party service. The server's capacity was inadequate to handle such loads, leading to performance bottlenecks. Whenever I noticed delayed responses, I would manually check the server status to confirm if it was operational. In cases where the server wasn’t down, I often ended up with JSON responses that didn’t provide much clarity about the underlying issues.
+
+
+```JSON
+{"success":true,"message":"Amyal backend server is up","version":null,"env":"development"}
+```
+
+[![alt text](/posts/awesome-server-status-message/server-up.png)](https://www.youtube.com/watch?v=HJZ9TnKrt7Q "Alpha preview: Action Text for Rails 6")
+
+To enhance my experience, I decided to replace the typical JSON response with a beautifully rendered HTML page that would cheer me up whenever the server was operational.
+
+Since my application was entirely built as a Rails API, this required a bit of creativity. I created a new controller that inherits from ActionController::Base. This allowed me to serve HTML responses in addition to the JSON responses typically returned by the API. This new setup provided a much more pleasant and informative way to check the server's status.
+
+
+
+```ruby
+class PagesController < ActionController::Base; end
+```
+
+and the rest of the controllers will inherit from ActionController::API
+
+```ruby
+class ApplicationController < ActionController::API; end
+```
+
+app/controllers/pages_controller.rb
+
+
+```ruby
+# frozen_string_literal: true
+class PagesController < ActionController::Base
+# This will return not founded router page
+rescue_from ActiveRecord::RecordNotFound do
+  render :not_found
+end
+# Our server status action
+def status
+  @build_revision = build_revision
+  render :status
+end
+
+private
+
+  # REVISION is a file generated in current folder in server by Capistrano
+  # which show the commit id of the current version of the application in current folder
+
+  def build_revision
+    return unless File.file?('REVISION')
+    file = File.open('REVISION', 'r')
+    data = file.read
+    file.close
+    data
+  end
+end
+```
+
+and we added some HTML and CSS code in our view
+app/views/pages/status.html.erb
+
+```ruby
+<!doctype html>
+<html>
+  <head>
+    <title>Server Staus</title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { text-align: center; padding: 150px; }
+    h1 { font-size: 50px; }
+    body { font: 20px Helvetica, sans-serif; color: #333; }
+    article { display: block; text-align: left; width: 1050px; margin: 0 auto; }
+    a { color: #dc8100; text-decoration: none; }
+    a:hover { color: #333; text-decoration: none; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { text-align: left; padding: 8px; }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    th { background-color: #4CAF50; color: white; }
+  </style>
+  </head>
+<body>
+<article>
+  <h1 style="color:Tomato;"><%=Rails.env.capitalize%> Server</h1>
+<div>
+  <p style="color:DodgerBlue;">Amyal backend server is running, Enjoy with our api&rsquo;s!</p>
+  <div style="overflow-x:auto;">
+<table>
+  <tr>
+  <th>Status</th>
+  <th>Environment</th>
+  <th>Message</th>
+  <th>Version</th>
+  </tr>
+  <tr>
+  <td>Running</td>
+  <td><%=Rails.env.capitalize%></td>
+  <td>Amyal backend server is up</td>
+  <td><%=@build_revision%></td>
+  </tr>
+</table>
+</div>
+  <p style="color:MediumSeaGreen;">&mdash; Best regards: Back-end Team</p>
+</div>
+</article>
+</body>
+</html>
+```
+
+Now check localhost:3000 to see the result
