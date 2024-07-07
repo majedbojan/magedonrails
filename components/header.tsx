@@ -36,8 +36,8 @@ export function Header() {
                 <a className="flex items-center">
                   <Image
                     src={logoSrc}
-                    alt={process.env.NEXT_PUBLIC_SITE_NAME || 'Site Logo'}
-                    width={50} // Adjust width as per your design requirements
+                    alt={'Site Logo'}
+                    width={100} // Adjust width as per your design requirements
                     height={50} // Adjust height as per your design requirements
                     priority // Optimize for faster loading
                   />
