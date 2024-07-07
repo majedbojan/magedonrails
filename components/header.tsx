@@ -47,7 +47,7 @@ export function Header() {
             <div className="hidden sm:ml-12 sm:flex sm:items-center">
               <div className="space-x-6 text-sm font-medium">
                 <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
+                <Link href="/about">Who I Am</Link>
                 <Link href="/hireme">Hire Me</Link>
               </div>
             </div>
