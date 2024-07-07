@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from 'next/image';
+
 import { MenuIcon } from "lucide-react"
 
 import { ThemeSwitcher } from "./theme-switcher"
@@ -10,6 +12,7 @@ export function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
   const toggleMobileMenu = () => setIsMobileOpen(!isMobileOpen)
+  const logoSrc = '/logo.png';
 
   return (
     <nav className="mb-12">
@@ -29,14 +32,23 @@ export function Header() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <Link href="/" className="text-3xl font-black">
-                {process.env.NEXT_PUBLIC_SITE_NAME}
+              <Link href="/" legacyBehavior>
+                <a className="flex items-center">
+                  <Image
+                    src={logoSrc}
+                    alt={process.env.NEXT_PUBLIC_SITE_NAME || 'Site Logo'}
+                    width={50} // Adjust width as per your design requirements
+                    height={50} // Adjust height as per your design requirements
+                    priority // Optimize for faster loading
+                  />
+                </a>
               </Link>
             </div>
             <div className="hidden sm:ml-12 sm:flex sm:items-center">
               <div className="space-x-6 text-sm font-medium">
                 <Link href="/">Home</Link>
                 <Link href="/about">About</Link>
+                <Link href="/hireme">Hire Me</Link>
               </div>
             </div>
           </div>
