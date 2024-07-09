@@ -58,7 +58,7 @@ export default async function PostPage({ params }: PostProps) {
       {post.image && (
         <div className="relative mb-12 h-[345px] w-full">
           <Image
-            className="m-0 w-full rounded-lg object-cover"
+            className="m-0 w-full rounded-lg"
             src={post.image}
             alt={post.title}
             fill
