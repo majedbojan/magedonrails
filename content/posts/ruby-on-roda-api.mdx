@@ -2,17 +2,18 @@
 title: Ruby on Roda API
 date: "2019-12-17T22:12:03.284Z"
 description: "Ruby on Roda API"
-category: Ruby, Roda
+category: RubyOnRoda
 image: /posts/ruby-on-roda-api/cover.png
 ---
 
-<span style="color: #9b111e; letter-spacing: 0.09em; font-size: 30px; font-weight: 600;">Roda</span>is a lightweight and productive framework for building web applications using <span style="color: #9b111e; letter-spacing: 0.09em; font-size: 15px; font-weight: 600;"> Ruby</span>. as mentioned in Roda’s [Website](https://roda.jeremyevans.net/), Roda is designed to be simple, both internally and externally, reducing cognitive overhead. Roda uses a routing tree which means At any point during routing, it allows you to operate on the current request.
+<span style={{ color: '#9b111e', letterSpacing: '0.09em', fontSize: '30px', fontWeight: '600' }}>Roda</span> is a lightweight and productive framework for building web applications using <span style={{ color: '#9b111e', letterSpacing: '0.09em', fontSize: '15px', fontWeight: '600' }}>Ruby</span>. As mentioned in Roda’s [Website](https://roda.jeremyevans.net/), Roda is designed to be simple, both internally and externally, reducing cognitive overhead. Roda uses a routing tree which means at any point during routing, it allows you to operate on the current request.
 
 ![First one](/posts/ruby-on-roda-api/1.png)
 
 Let’s stop praising Roda and start building some useful things.
 
-Before you go through this article you need to have some basic knowledge about<span style="color: #9b111e; letter-spacing: 0.09em; font-size: 15px; font-weight: 600;"> Ruby</span>  -> [Get started with ruby](https://www.ruby-lang.org/en/)
+
+Before you go through this article, you need to have some basic knowledge about <span style={{ color: '#9b111e', letterSpacing: '0.09em', fontSize: '15px', fontWeight: '600' }}>Ruby</span> -> [<span style={{ color: '#9b111e', letterSpacing: '0.09em', fontSize: '15px', fontWeight: '600' }}>Get started with Ruby</span>](https://www.ruby-lang.org/en/)
 
 # Getting started
 
@@ -32,27 +33,28 @@ Options to structure the project files
 - Using my repo, i tried to keep the structure as we used to in Rails
 ![First one](/posts/ruby-on-roda-api/2.png)
 
+
 ```powershell
-git clone https://github.com/MajedBojan/roda_api/tree/setup_project_structure
-cd roda_api
-rm -rf .git
-bundle install
-# follow the developer guide over there to setup the database
+  git clone https://github.com/MajedBojan/roda_api/tree/setup_project_structure
+  cd roda_api
+  rm -rf .git
+  bundle install
+  # follow the developer guide over there to setup the database
 ```
 
-
-- Or you can use Jeremy Evans’s [repo](https://github.com/jeremyevans/roda-sequel-stack)
+- Or you can use Jeremy Evans's [repo](https://github.com/jeremyevans/roda-sequel-stack)
 
 ![First one](/posts/ruby-on-roda-api/3.png)
 
-```powershel
-$ git clone https://github.com/jeremyevans/roda-sequel-stack
-$ mv roda-sequel-stack my_app
-$ cd my_app
-$ rake setup[MyApp]
+
+```powershell
+  git clone https://github.com/jeremyevans/roda-sequel-stack
+  mv roda-sequel-stack my_app
+  cd my_app
+  rake setup[MyApp]
 ```
 
-The main file in the app is `app.rb` and this file has been loaded via `config.ru` to serve the application with `rackup` command
+The main file in the app is <code>app.rb</code> and this file has been loaded via <code>config.ru</code> to serve the application with <code>rackup</code> command
 
 ```ruby
 # frozen_string_literal: true
@@ -85,8 +87,7 @@ end
 ```
 
 
-Run `rackup` now, make GET request to our app’s root / URL, and you should see server status response.
-
+Run <code>rackup</code> now, make GET request to our app’s root / URL, and you should see server status response.
 
 ```ruby
 {
@@ -168,15 +169,14 @@ end
 
 ### Step 1
 
-Create the models files for `category, item, and order`
+Create the models files for <code>category, item, and order</code>
 
 ```powershell
   touch app/models/category.rb app/models/item.rb app/models/order.rb
 ```
 
 
-let’s create migration files for those models as well `category, item, and order`
-
+let’s create migration files for those models as well <code>category, item, and order</code>
 
 ```powershell
   touch db/migrate/002_create_categories.rb db/migrate/003_create_items.rb db/migrate/004_create_orders.rb
@@ -261,17 +261,18 @@ Sequel.migration do
 end
 ```
 
-Here we go!!!! run `rake db:migrate`
+Here we go!!!! run <code>rake db:migrate</code>
 
 The next step is to create CRUD operations for our classes, RODA provides a plugin that helps to split out the controllers which is plugin :hash_routes
 
-let’s create the controller’s files for `categories, items, and orders`
+let’s create the controller’s files for <code>categories, items, and orders</code>
 
 ```powershell
   touch app/controllers/api/v1/categories.rb app/controllers/api/v1/items.rb app/controllers/api/v1/orders.rb
 ```
 
 let’s start with categories and create the CRUD operations app/controllers/api/v1/categories.rb
+
 
 ```ruby
 # frozen_string_literal: true

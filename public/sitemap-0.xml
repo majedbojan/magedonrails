@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://localhost:3000/about</loc><lastmod>2023-09-29T01:26:23.976Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000</loc><lastmod>2023-09-29T01:26:23.976Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/posts/deploying-nextjs-apps</loc><lastmod>2023-09-29T01:26:23.976Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/posts/mastering-the-javascript-filter-function</loc><lastmod>2023-09-29T01:26:23.976Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/categories/Next.js</loc><lastmod>2023-09-29T01:26:23.976Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/categories/JavaScript</loc><lastmod>2023-09-29T01:26:23.976Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000</loc><lastmod>2024-07-10T13:16:15.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/Ruby</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/AWS</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/ProgrammingLanguage</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/Payment</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/CloudComputing</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/Markdown</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/rails</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/RubyOnRoda</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/JSONAPI</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/RailsRefactoring</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/categories/Rails</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/about</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/hireme</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/action-text-is-what-i-was-looking-for-before-dhh-announce-it</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/awesome-server-status-message</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/deploy-rails-application-to-aws</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/effective-strategy-to-learning-new-programming-language</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/how-to-integrate-payfort-in-rails-api-swift-and-kotlin</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/introduction-to-cloud-computing</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/markdown-from-overview-to-syntax</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/playing-out-with-new-features-in-rails</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/refactoring-mailer-class</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/ruby-on-roda-api</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/spreadsheet-in-ruby-and-ror</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/standard-json-api-response-format</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/styling-guidelines-for-ruby-by-shopify-airbnb-and-github</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/posts/upgrade-your-rails-app-from_5.1_to_5.2</loc><lastmod>2024-07-10T13:16:15.654Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

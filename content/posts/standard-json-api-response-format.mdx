@@ -2,21 +2,25 @@
 title: Standard JSON API response format
 date: "2019-10-20T22:12:03.284Z"
 description: "Standard JSON API response format"
-category: JSON,API
+category: JSONAPI
 image: /posts/standard-json-api-response-format/jsonapi.png
 ---
 
-Recently one of my friend asked me if there is any standard response we follow for API response, this question asked too much from beginner developers especially those are new in term of API
-I was really interested by this question as I have to design a JSON API everyday. I found myself wondering if there is any standard over there.
-I started searching about standard JSON format but unfortunately there is no standard Not only within JSON itself, but in terms of how to use it for RESTful applications or anything else of the sort. Everybody does it differently.
-So i decided to explain what the standard we are following in our company, we are writing API’s in rails framework and returning response as JSON to front-end applications
-There are 2 kind of responses in each API request which are Success response and Error response i will explain briefly some of our API’s responses how it looks
+Recently, a friend asked me if there’s a standard format we follow for API responses. This is a common question among beginners, especially those new to APIs. Given that I design JSON APIs daily, I found this query particularly intriguing. It made me reflect on whether there’s a universal standard out there.
 
-The main response structure have 4 keys which are
-> 1) error_code code to indicate if there was an error
-> 2) Success always returning true or false if the response is success will returning true otherwise will get false
-> 3) Message it’s better to return the response message from back-end
-> 4) data which is the main key and will have the data that should be displayed
+Upon researching, I discovered that there isn't a universally accepted standard for JSON API responses. This lack of standardization isn't just within JSON itself but also extends to how it’s used in RESTful applications or other API types. Each developer or organization tends to adopt their own approach.
+
+
+## Our Approach to JSON API Responses
+
+In our company, where we develop APIs using the Rails framework, we’ve settled on a consistent structure for our JSON responses. Our format encompasses two main types of responses: Success and Error. Here’s a brief overview of the structure we use:
+
+
+Key Components of Our API Response
+- *error_code*: Indicates if there was an error.
+- *success*: Returns true if the response is successful, otherwise false.
+- *message*: A human-readable message from the backend.
+- *data*: Contains the main payload of the response.
 
 ```json
 {
@@ -26,7 +30,10 @@ The main response structure have 4 keys which are
 }
 ```
 
-So let’s start with the bellow login example response , we have got the message and success out of data key and got the user object, JWT token and related relationship inside data
+## Example API Responses
+### Successful Login Response
+In the example below, the *success* and *message* keys are outside the *data* key, while the user object, JWT token, and related data are within the data key:
+
 
 ```json
 {
